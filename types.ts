@@ -1,4 +1,9 @@
 
+export interface RegionalRelease {
+  region: string;
+  date: string;
+}
+
 export interface Game {
   id: string;
   title: string;
@@ -7,7 +12,14 @@ export interface Game {
   imageUrl?: string;
   description?: string;
   genre?: string;
-  status: 'owned' | 'wishlist' | 'none'; // 'none' is for games found in search but not added
+  status: 'owned' | 'wishlist' | 'none';
+  // Champs détaillés pour la fiche unique
+  metacritic?: number;
+  developer?: string;
+  publisher?: string;
+  regionalReleases?: RegionalRelease[];
+  variants?: string[];
+  covers?: { region: string; url: string; description: string }[];
 }
 
 export interface ConsoleStats {
@@ -20,8 +32,10 @@ export interface ConsoleStats {
 export enum AppView {
   DEX = 'dex',
   SEARCH = 'search',
+  CATALOGUE = 'catalogue',
   STATS = 'stats',
-  SETTINGS = 'settings'
+  SETTINGS = 'settings',
+  DETAILS = 'details'
 }
 
 export const SUPPORTED_CONSOLES = [
