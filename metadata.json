@@ -1,0 +1,5 @@
+{
+  "name": "GameDex - Video Game Pokédex",
+  "description": "A local-first video game collection tracker. Discover games, track your progress by console, and manage your physical or digital library without any cloud accounts or trackers.",
+  "requestFramePermissions": []
+}
